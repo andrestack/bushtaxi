@@ -18,5 +18,12 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "registries": {}
+  "registries": {
+    "@magicui-pro": {
+      "url": "https://pro.magicui.design/registry/{name}",
+      "headers": {
+        "Authorization": "Bearer ${MAGICUI_PRO_REGISTRY_TOKEN}"
+      }
+    }
+  }
 }

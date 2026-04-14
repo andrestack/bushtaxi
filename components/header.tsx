@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useSyncExternalStore, type ReactNode } from "react";
 
@@ -99,7 +100,7 @@ function GitHubIcon({ className }: { className?: string }): ReactNode {
 function MenuCard({ card }: { card: (typeof menuCards)[number] }): ReactNode {
   return (
     <motion.div
-      className="bg-menu-card min-h-50 rounded-2xl p-6 min-[1080px]:min-h-80"
+      className="bg-menu-card min-h-50 rounded-md border-2 border-black p-6 min-[1080px]:min-h-80"
       variants={{
         hidden: { opacity: 0, y: 30 },
         visible: {
@@ -109,7 +110,7 @@ function MenuCard({ card }: { card: (typeof menuCards)[number] }): ReactNode {
         },
       }}
     >
-      <span className="text-background/50 text-xs font-medium tracking-widest uppercase">
+      <span className="font-display text-background/50 text-xs font-medium tracking-widest uppercase">
         {card.title}
       </span>
 
@@ -126,7 +127,7 @@ function MenuCard({ card }: { card: (typeof menuCards)[number] }): ReactNode {
               <a
                 key={label}
                 href={href}
-                className="bg-background/10 text-background hover:bg-background/20 flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
+                className="bg-background/10 text-background hover:bg-background/20 flex h-12 w-12 items-center justify-center rounded-md border-2 border-black/20 transition-all duration-300 hover:scale-110"
                 aria-label={label}
               >
                 <Icon className="h-5 w-5" />
@@ -180,13 +181,13 @@ function MobileSignUpButton(): ReactNode {
     >
       <Link
         href="#"
-        className="text-background rounded-[3.5px] bg-background/10 px-6 py-3 text-xl font-medium tracking-tight transition-colors"
+        className="text-background rounded-md border-2 border-white/20 bg-background/10 px-6 py-3 text-xl font-medium tracking-tight transition-colors"
       >
         Sign Up
       </Link>
       <Link
         href="#"
-        className="group bg-accent relative rounded-[3.5px] px-6 py-3 text-xl font-medium tracking-tight text-black transition-all duration-500 hover:rounded-[50px]"
+        className="group bg-accent relative rounded-md border-2 border-black px-6 py-3 text-xl font-medium tracking-tight text-black transition-all duration-500 hover:rounded-[50px]"
       >
         <span
           className="relative block h-[1.25em] overflow-hidden"
@@ -267,7 +268,7 @@ export function Header(): ReactNode {
         }}
       >
         <motion.nav
-          className="bg-foreground shadow-2xl/20 border border-neutral-200/10 flex max-w-6xl flex-col overflow-hidden rounded-md"
+          className="bg-foreground shadow-2xl/20 flex max-w-6xl flex-col overflow-hidden rounded-md border-2 border-black"
           initial={false}
           animate={{ 
             width: isMenuOpen ? "100%" : hasScrolled ? "56rem" : "42rem",
@@ -275,14 +276,18 @@ export function Header(): ReactNode {
           transition={{ ...spring, delay: isMenuOpen ? 0 : 0.15 }}
         >
           <div className="flex w-full items-center justify-between py-2 pr-2 pl-4">
-            <Link href="/">
-              <span className="text-background text-4xl font-extrabold -tracking-widest">
-                TLDR
-              </span>
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/img/banner.svg"
+                alt="Bush Taxi"
+                width={120}
+                height={32}
+                className="h-8 w-auto"
+              />
             </Link>
 
             <button
-              className="text-background/80 hover:text-background flex h-full cursor-pointer items-center gap-2 rounded-[3.5px] px-2 transition-colors hover:bg-white/10"
+              className="text-background/80 hover:text-background flex h-full cursor-pointer items-center gap-2 rounded-md px-2 transition-colors hover:bg-white/10"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <HamburgerIcon isOpen={isMenuOpen} />

@@ -47,7 +47,7 @@ function FAQItem({
 }): ReactNode {
   return (
     <motion.div
-      className="border-foreground/10 border-b last:border-b-0"
+      className="border-foreground/20 border-b last:border-b-0"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
@@ -97,7 +97,7 @@ export function FAQ(): ReactNode {
   };
 
   return (
-    <section className="bg-foreground px-6 py-16 md:py-32 rounded-4xl">
+    <section className="bg-accent-blue px-6 py-16 md:py-32 rounded-4xl border-2 border-black">
       <div className="mx-auto max-w-3xl">
         <motion.div
           ref={headerRef}
@@ -106,13 +106,13 @@ export function FAQ(): ReactNode {
           animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, ease: easeOut }}
         >
-          <h2 className="text-background text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+          <h2 className="font-display text-black text-3xl font-medium tracking-tight uppercase md:text-4xl lg:text-5xl">
             Common Questions
           </h2>
         </motion.div>
 
         <motion.div
-          className="bg-background rounded-2xl px-6 md:px-10 py-2"
+          className="bg-background rounded-md border-2 border-black px-6 md:px-10 py-2"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -136,15 +136,15 @@ export function FAQ(): ReactNode {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, delay: 0.2, ease: easeOut }}
         >
-          <p className="text-background/60 mb-6 text-base">
+          <p className="text-black/60 mb-6 text-base">
             Still have questions? We&apos;re here to help.
           </p>
           <a
             href="mailto:hello@tldr.app"
-            className="group inline-flex items-center gap-3 rounded-md bg-background py-3 pl-5 pr-3 font-medium text-foreground shadow-lg transition-all duration-500 ease-out hover:rounded-[50px]"
+            className="group inline-flex items-center gap-3 rounded-md border-2 border-black bg-background py-3 pl-5 pr-3 font-medium text-foreground shadow-lg transition-all duration-500 ease-out hover:rounded-[50px]"
           >
             <span>Get in Touch</span>
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground text-background transition-all duration-300 group-hover:scale-110">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-foreground text-background transition-all duration-300 group-hover:scale-110">
               <ChevronRightIcon className="h-4 w-4 relative left-px" />
             </span>
           </a>

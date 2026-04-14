@@ -121,7 +121,7 @@ export function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: easeOut }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-foreground">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight uppercase text-foreground">
             What People Are Saying
           </h2>
 
@@ -129,7 +129,7 @@ export function Testimonials() {
             <button
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
-              className="cursor-pointer p-3 rounded-md bg-accent text-black transition-all duration-200 hover:scale-110 hover:bg-accent/80 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="cursor-pointer p-3 rounded-md border-2 border-black bg-accent text-black transition-all duration-200 hover:scale-110 hover:bg-accent/80 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
               aria-label="Scroll left"
             >
               <ArrowLeft className="w-5 h-5" />
@@ -137,7 +137,7 @@ export function Testimonials() {
             <button
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
-              className="cursor-pointer p-3 rounded-md bg-accent text-black transition-all duration-200 hover:scale-110 hover:bg-accent/80 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="cursor-pointer p-3 rounded-md border-2 border-black bg-accent text-black transition-all duration-200 hover:scale-110 hover:bg-accent/80 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
               aria-label="Scroll right"
             >
               <ArrowRight className="w-5 h-5" />
@@ -154,9 +154,9 @@ export function Testimonials() {
             {testimonials.map((item, index) => (
               <div
                 key={index}
-                className="flex-none w-[calc(100vw-3rem)] md:w-100 h-112.5 bg-muted rounded-2xl p-8 md:p-10 flex flex-col justify-between snap-start"
+                className="flex-none w-[calc(100vw-3rem)] md:w-100 h-112.5 bg-muted rounded-md border-2 border-black p-8 md:p-10 flex flex-col justify-between snap-start"
               >
-                <h3 className="text-3xl md:text-4xl font-medium leading-[1.1] tracking-tight">
+                <h3 className="font-display text-3xl md:text-4xl font-medium leading-[1.1] tracking-tight uppercase">
                   {item.title}
                 </h3>
                 <div>

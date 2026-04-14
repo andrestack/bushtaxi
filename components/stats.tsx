@@ -91,7 +91,7 @@ function StatCard({
         ease: easeOut,
       }}
     >
-      <div className="text-foreground text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl">
+      <div className="font-display text-foreground text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl">
         <AnimatedNumber
           value={stat.value}
           suffix={stat.suffix}
@@ -119,7 +119,7 @@ export function Stats(): ReactNode {
           animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, ease: easeOut }}
         >
-          <h2 className="text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+          <h2 className="font-display text-3xl font-medium tracking-tight uppercase md:text-4xl lg:text-5xl">
             Trusted by Readers Worldwide
           </h2>
         </motion.div>

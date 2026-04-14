@@ -6,13 +6,13 @@
  */
 
 export const siteConfig = {
-  name: "TLDR",
-  tagline: "Read smarter, not longer",
-  description: "AI-powered summaries for articles, videos, and documents. Save hours every week.",
+  name: "Bush Taxi",
+  tagline: "Learn the rhythms, feel the culture",
+  description: "West African Drumming School — immersive classes, workshops, and cultural experiences rooted in tradition.",
   url: "https://example.com",
   social: {
-    twitter: "@tldr",
-    github: "https://github.com/tldr",
+    twitter: "@bushtaxi",
+    github: "https://github.com/bushtaxi",
   },
   nav: {
     cta: {
@@ -28,14 +28,14 @@ export const siteConfig = {
 
 export const heroConfig = {
   headline: {
-    prefix: "Get the",
-    accent: "TLDR",
-    suffix: "on anything",
+    prefix: "Feel the",
+    accent: "Rhythm",
+    suffix: "of West Africa",
   },
-  description: "Summarize articles, videos, podcasts, and PDFs instantly. Read smarter, not longer.",
+  description: "Immersive drumming classes, workshops, and cultural experiences rooted in tradition.",
   cta: {
     primary: {
-      text: "Add to Chrome — It's Free",
+      text: "Start Learning",
       href: "#",
     },
     secondary: {
@@ -44,38 +44,38 @@ export const heroConfig = {
     },
   },
   carousel: [
-    "Tech News",
-    "Research Papers",
-    "YouTube Videos",
-    "Podcasts",
-    "Blog Posts",
-    "Documentation",
-    "Email Threads",
-    "Meeting Notes",
-    "Legal Documents",
-    "Financial Reports",
-    "Product Reviews",
-    "Academic Articles",
+    "Djembe",
+    "Dunun",
+    "Balafon",
+    "Kora",
+    "Workshops",
+    "Group Classes",
+    "Private Lessons",
+    "Cultural Events",
+    "Performances",
+    "Retreats",
+    "Kids Classes",
+    "Master Classes",
   ],
 } as const;
 
 export const howItWorksConfig = {
-  title: "Three steps to clarity",
-  description: "Get key insights from any content in seconds. No more endless scrolling.",
+  title: "Three steps to start drumming",
+  description: "Begin your journey into West African rhythm in minutes.",
   cta: {
-    text: "Start Summarizing",
+    text: "Start Learning",
     href: "#",
   },
 } as const;
 
 export const featuresConfig = {
   title: "Everything you need",
-  description: "Powerful features to help you consume content faster and smarter.",
+  description: "Comprehensive drumming education rooted in authentic West African tradition.",
 } as const;
 
 export const statsConfig = {
-  title: "Trusted by thousands",
-  description: "Join the growing community of smarter readers.",
+  title: "Trusted by drummers worldwide",
+  description: "Join the growing community of rhythm seekers.",
 } as const;
 
 export const testimonialsConfig = {
@@ -103,47 +103,47 @@ export const faqConfig = {
     text: "Still have questions? We're here to help.",
     cta: {
       text: "Get in Touch",
-      href: "mailto:hello@tldr.app",
+      href: "mailto:hello@bushtaxi.com",
     },
   },
 } as const;
 
 export const finalCtaConfig = {
-  headline: "Ready to save hours every week?",
-  description: "Join thousands who read smarter. Install the extension and start summarizing in seconds.",
+  headline: "Ready to feel the rhythm?",
+  description: "Join our community of drummers. Start your journey into West African music today.",
   cta: {
-    text: "Add to Chrome",
+    text: "Start Learning",
     href: "#",
   },
 } as const;
 
 export const footerConfig = {
-  description: "Ready to read smarter? TLDR transforms any article into a concise summary, helping you stay informed without the time commitment.",
+  description: "Bush Taxi Drumming School — immersive classes, workshops, and cultural experiences rooted in West African tradition.",
   cta: {
-    text: "Get Started Free",
+    text: "Get Started",
     href: "#",
   },
   links: {
     product: [
-      { label: "Chrome Extension", href: "#" },
-      { label: "Safari Extension", href: "#" },
-      { label: "API Access", href: "#" },
-      { label: "Enterprise", href: "#" },
+      { label: "Classes", href: "#" },
+      { label: "Workshops", href: "#" },
+      { label: "Events", href: "#" },
+      { label: "Private Lessons", href: "#" },
     ],
     company: [
       { label: "About", href: "#" },
       { label: "Blog", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "Instructors", href: "#" },
       { label: "Contact", href: "#" },
     ],
   },
   contact: {
-    location: "San Francisco",
-    address: "548 Market St, Suite 95000\nSan Francisco, CA 94104",
-    hours: "Mon-Fri 9:00 am - 6:00 pm (PST)",
-    email: "hello@tldr.app",
+    location: "West Africa",
+    address: "Bush Taxi Drumming School",
+    hours: "Mon-Sat 9:00 am - 6:00 pm",
+    email: "hello@bushtaxi.com",
   },
-  copyright: `© ${new Date().getFullYear()} TLDR Technologies Inc.`,
+  copyright: `© ${new Date().getFullYear()} Bush Taxi Drumming School.`,
 } as const;
 
 /**
@@ -153,7 +153,7 @@ export const footerConfig = {
  */
 export const features = {
   smoothScroll: true,
-  darkMode: true,
+  darkMode: false,
   ditherCursor: true,
   statsSection: true,
 } as const;

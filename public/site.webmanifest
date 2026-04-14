@@ -1,11 +1,11 @@
 {
-  "name": "Your Site Name",
-  "short_name": "Site",
-  "description": "A modern, accessible landing page template built with Next.js, Tailwind CSS, and TypeScript.",
+  "name": "Bush Taxi Drumming School",
+  "short_name": "Bush Taxi",
+  "description": "West African Drumming School - Learn the rhythms, feel the culture.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0066FF",
+  "background_color": "#F0BB78",
+  "theme_color": "#F0BB78",
   "icons": [
     {
       "src": "/icon-192.png",

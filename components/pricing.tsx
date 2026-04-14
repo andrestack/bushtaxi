@@ -49,9 +49,9 @@ const plans: Plan[] = [
 function PlanCard({ plan }: { plan: Plan }): ReactNode {
   return (
     <motion.div
-      className={`rounded-2xl p-6 md:p-8 ${
+      className={`rounded-md border-2 border-black p-6 md:p-8 ${
         plan.highlighted
-          ? "border-accent bg-background border-2 transition-[border-color,box-shadow] duration-300 hover:border-accent/80 hover:shadow-lg hover:shadow-accent/10"
+          ? "bg-accent-blue transition-shadow duration-300 hover:shadow-lg"
           : "bg-background transition-[background-color] duration-300 hover:bg-background/80"
       }`}
       initial={{ opacity: 0, y: 30 }}
@@ -64,12 +64,12 @@ function PlanCard({ plan }: { plan: Plan }): ReactNode {
       }}
     >
       <div className="mb-6">
-        <h3 className="text-lg font-medium">{plan.name}</h3>
+        <h3 className="font-display text-lg font-medium uppercase">{plan.name}</h3>
         <p className="text-muted-foreground text-sm">{plan.tagline}</p>
       </div>
 
       <div className="mb-8 flex items-baseline gap-1">
-        <span className="text-4xl font-medium tracking-tight md:text-5xl">
+        <span className="font-display text-4xl font-medium tracking-tight md:text-5xl">
           {plan.price}
         </span>
         <span className="text-muted-foreground text-sm">/ {plan.period}</span>
@@ -105,7 +105,7 @@ export function Pricing(): ReactNode {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: easeOut }}
         >
-          <h2 className="mb-4 text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+          <h2 className="font-display mb-4 text-3xl font-medium tracking-tight uppercase md:text-4xl lg:text-5xl">
             Pricing
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -132,10 +132,10 @@ export function Pricing(): ReactNode {
         >
           <a
             href="#"
-            className="group inline-flex w-full items-center justify-center gap-3 rounded-md bg-accent py-3 pl-5 pr-3 font-medium text-black transition-all duration-500 ease-out hover:rounded-[50px] hover:shadow-lg hover:shadow-accent/20 sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-3 rounded-md border-2 border-black bg-accent py-3 pl-5 pr-3 font-medium text-black transition-all duration-500 ease-out hover:rounded-[50px] hover:shadow-lg sm:w-auto"
           >
             <span>Go Pro</span>
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-all duration-300 group-hover:scale-110">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-white text-black transition-all duration-300 group-hover:scale-110">
               <ChevronRightIcon className="h-4 w-4 relative left-px" />
             </span>
           </a>

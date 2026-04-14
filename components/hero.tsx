@@ -3,116 +3,50 @@
 import { ChevronRight as ChevronRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { useEffect, useRef, useState, type ReactNode } from "react";
-import DitherCursor from "./dither-cursor";
+import { useRef, type ReactNode } from "react";
 import RotatingCards, { type Card } from "./rotating-cards";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 const headlineText = "No More Time To Waste";
 
 const cardData = [
-  { label: "Chrome Extension", image: "/img/chrome-extension.webp" },
-  { label: "Safari Extension", image: "/img/safari-extension.webp" },
-  { label: "API Access", image: "/img/api-access.webp" },
-  { label: "Article Summary", image: "/img/article-summary.webp" },
-  { label: "Video Summary", image: "/img/video-summary.webp" },
-  { label: "Podcast Summary", image: "/img/podcast-summary.webp" },
-  { label: "PDF Summary", image: "/img/pdf-summary.webp" },
-  { label: "Research Papers", image: "/img/research-papers.webp" },
-  { label: "Social Threads", image: "/img/social-threads.webp" },
-  { label: "Email Digest", image: "/img/email-digest.webp" },
-  { label: "Book Summary", image: "/img/book-summary.webp" },
+  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
+  { label: "Hari", image: "/img/hari.svg" },
+  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
+  { label: "Lenke", image: "/img/lenke.svg" },
+  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
+  { label: "Hari", image: "/img/hari.svg" },
+  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
+  { label: "Lenke", image: "/img/lenke.svg" },
+  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
+  { label: "Hari", image: "/img/hari.svg" },
+  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
 ];
 
 const carouselCards: Card[] = cardData.map((card, index) => ({
   id: index + 1,
   content: (
-    <div className="flex h-full flex-col p-2">
-      <div className="relative flex-1 overflow-hidden rounded-t-sm rounded-b-full">
-        <Image
-          src={card.image}
-          alt={card.label}
-          fill
-          className="object-cover grayscale"
-        />
-      </div>
-      <div className="px-1 pt-3 text-center">
-        <span className="text-sm font-medium">{card.label}</span>
-      </div>
+    <div className="relative h-full w-full">
+      <Image
+        src={card.image}
+        alt={card.label}
+        fill
+        className="object-contain"
+      />
     </div>
   ),
 }));
 
 export function Hero(): ReactNode {
   const sectionRef = useRef<HTMLElement>(null);
-  const headlineRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [shouldRender, setShouldRender] = useState(false);
-  const [opacity, setOpacity] = useState(0);
-  const [isMobile, setIsMobile] = useState(true);
-  const opacityRef = useRef(0);
-  const animationRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  useEffect(() => {
-    const headline = headlineRef.current;
-    if (!headline) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry) return;
-        setIsVisible(entry.isIntersecting);
-        if (entry.isIntersecting) setShouldRender(true);
-      },
-      { threshold: 0, rootMargin: "-10% 0px -10% 0px" }
-    );
-
-    observer.observe(headline);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const targetOpacity = isVisible ? 1 : 0;
-
-    const animate = () => {
-      const diff = targetOpacity - opacityRef.current;
-      const step = diff * 0.02;
-
-      if (Math.abs(diff) > 0.001) {
-        opacityRef.current += step;
-        setOpacity(opacityRef.current);
-        animationRef.current = requestAnimationFrame(animate);
-      } else {
-        opacityRef.current = targetOpacity;
-        setOpacity(targetOpacity);
-        if (targetOpacity === 0) setShouldRender(false);
-      }
-    };
-
-    if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    animationRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    };
-  }, [isVisible]);
 
   return (
     <section
       ref={sectionRef}
       className="relative flex min-h-dvh flex-col items-center justify-start overflow-hidden px-6 pt-40 sm:pt-82"
     >
-      {!isMobile && shouldRender && (
-        <DitherCursor opacity={opacity} />
-      )}
-      <div ref={headlineRef} className="relative z-10 mx-auto md:text-center">
-        <h1 className="mb-8 text-5xl font-medium tracking-tighter md:text-8xl lg:text-8xl">
+      <div className="relative z-10 mx-auto md:text-center">
+        <h1 className="font-display mb-8 text-5xl font-medium tracking-tighter uppercase md:text-8xl lg:text-8xl">
           {headlineText.split("").map((char, index) => (
             <motion.span
               key={index}
@@ -140,15 +74,15 @@ export function Hero(): ReactNode {
           }}
           className="text-muted-foreground mx-auto mt-6 max-w-xl text-2xl leading-12 tracking-tight md:text-3xl"
         >
-          <span className="text-foreground bg-foreground/5 inline-block rounded-md px-2 py-0.5 leading-10">
+          <span className="text-foreground inline-block rounded-md border-2 border-black px-2 py-0.5 leading-10">
             Read less
           </span>{" "}
           &{" "}
-          <span className="text-foreground bg-foreground/5 inline-block rounded-full px-4 py-0.5 leading-10">
+          <span className="text-foreground inline-block rounded-md border-2 border-black px-4 py-0.5 leading-10">
             know more
           </span>{" "}
           Save{" "}
-          <span className="text-foreground bg-foreground/5 inline-block rounded-md px-2 py-0.5 leading-10">
+          <span className="text-foreground inline-block rounded-md border-2 border-black px-2 py-0.5 leading-10">
             hours
           </span>{" "}
           every week with AI summaries done right.
@@ -165,19 +99,19 @@ export function Hero(): ReactNode {
             "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
         }}
       >
-        <div className="absolute left-1/2 top-25 -translate-x-1/2 sm:top-30 lg:top-35 xl:top-40">
+        <div className="absolute top-25 left-1/2 -translate-x-1/2 sm:top-30 lg:top-35 xl:top-40">
           <div className="origin-top scale-[0.6] lg:scale-[0.7] xl:scale-100">
             <RotatingCards
               cards={carouselCards}
               radius={1000}
-              cardClassName="rounded-md"
+              cardClassName="!border-0 !shadow-none !bg-transparent !rounded-none"
               cardWidth={350}
               cardHeight={275}
               duration={100}
               pauseOnHover={true}
               autoPlay={true}
               initialRotation={-90}
-              showTrackLine={true}
+              showTrackLine={false}
               trackLineOffset={25}
             />
           </div>
@@ -191,20 +125,20 @@ export function Hero(): ReactNode {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.8, ease: easeOut }}
       >
-        <h2 className="max-w-3xl text-3xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+        <h2 className="font-display max-w-3xl text-3xl font-medium tracking-tight uppercase md:text-5xl lg:text-6xl">
           Turn Hours of Content <br />
           Into Fast Insight
         </h2>
         <motion.a
           href="#"
-          className="bg-accent group mt-8 inline-flex w-full items-center justify-center gap-3 rounded-md py-3 pl-5 pr-3 font-medium text-black shadow-lg shadow-accent/25 transition-all duration-500 ease-out hover:rounded-[50px] hover:shadow-xl hover:shadow-accent/40 sm:w-auto"
+          className="bg-accent group shadow-accent/25 hover:shadow-accent/40 mt-8 inline-flex w-full items-center justify-center gap-3 rounded-md border-2 border-black py-3 pr-3 pl-5 font-medium text-black shadow-lg transition-all duration-500 ease-out hover:rounded-[50px] hover:shadow-xl sm:w-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: easeOut, delay: 0.2 }}
         >
           <span>Get Started Free</span>
-          <span className="bg-background text-foreground flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110">
+          <span className="bg-background text-foreground flex h-10 w-10 items-center justify-center rounded-full border-2 border-black transition-all duration-300 group-hover:scale-110">
             <ChevronRightIcon className="relative left-px h-4 w-4" />
           </span>
         </motion.a>

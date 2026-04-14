@@ -20,21 +20,21 @@ const features: Feature[] = [
     title: "Summarize content",
     description:
       "Articles, videos, podcasts, PDFs, research papers — TLDR handles them all.",
-    image: "/img/article-summary.webp",
+    image: "/img/bushtaxi.svg",
   },
   {
     number: "02",
     title: "Extract insights",
     description:
       "Get the main points, not just a shortened version. Summaries that save you time.",
-    image: "/img/research-papers.webp",
+    image: "/img/lenke.svg",
   },
   {
     number: "03",
     title: "Save & organize",
     description:
       "Build your personal knowledge library. Tag, search, and revisit summaries anytime.",
-    image: "/img/book-summary.webp",
+    image: "/img/hari.svg",
   },
 ];
 
@@ -47,7 +47,7 @@ function FeatureCard({
 }): ReactNode {
   return (
     <motion.div
-      className="bg-muted grid grid-cols-1 gap-2 overflow-hidden rounded-2xl p-2 md:grid-cols-2 transition-colors duration-300 hover:bg-muted/80"
+      className="bg-muted grid grid-cols-1 gap-2 overflow-hidden rounded-md border-2 border-black p-2 md:grid-cols-2 transition-colors duration-300 hover:bg-muted/80"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.01 }}
@@ -59,10 +59,10 @@ function FeatureCard({
       }}
     >
       <div className="px-4 py-28">
-        <span className="text-muted-foreground bg-foreground/5 mb-4 block w-fit rounded-md px-2 py-1 text-sm font-medium transition-colors duration-300 group-hover:bg-foreground/10">
+        <span className="text-muted-foreground mb-4 block w-fit rounded-md border-2 border-black px-2 py-1 text-sm font-medium transition-colors duration-300">
           {feature.number}
         </span>
-        <h3 className="mb-4 text-2xl font-medium tracking-tight md:text-3xl">
+        <h3 className="font-display mb-4 text-2xl font-medium tracking-tight uppercase md:text-3xl">
           {feature.title}
         </h3>
         <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
@@ -70,13 +70,13 @@ function FeatureCard({
         </p>
       </div>
 
-      <div className="relative aspect-4/3 w-full self-stretch overflow-hidden rounded-xl md:aspect-auto">
+      <div className="relative aspect-4/3 w-full self-stretch overflow-hidden rounded-md border-2 border-black md:aspect-auto">
         <Image
           src={feature.image}
           alt={feature.title}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="relative! h-full! w-full! object-cover grayscale md:absolute!"
+          className="relative! h-full! w-full! object-cover md:absolute!"
         />
       </div>
     </motion.div>
@@ -95,7 +95,7 @@ export function Features(): ReactNode {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: easeOut }}
         >
-          <h2 className="mb-4 text-2xl font-medium tracking-tight md:mb-6 md:text-3xl lg:text-4xl">
+          <h2 className="font-display mb-4 text-2xl font-medium tracking-tight uppercase md:mb-6 md:text-3xl lg:text-4xl">
             Turn insights into action
           </h2>
           <p className="text-muted-foreground mb-6 max-w-sm text-base md:mb-8 md:text-lg">
@@ -104,10 +104,10 @@ export function Features(): ReactNode {
           </p>
           <a
             href="#"
-            className="bg-foreground group inline-flex w-full items-center justify-center gap-3 rounded-md py-3 pr-3 pl-5 font-medium text-background transition-all duration-500 ease-out hover:rounded-[50px] sm:w-auto"
+            className="bg-foreground group inline-flex w-full items-center justify-center gap-3 rounded-md border-2 border-black py-3 pr-3 pl-5 font-medium text-background transition-all duration-500 ease-out hover:rounded-[50px] sm:w-auto"
           >
             <span>Get Started Free</span>
-            <span className="bg-background text-foreground flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110">
+            <span className="bg-background text-foreground flex h-10 w-10 items-center justify-center rounded-full border-2 border-black transition-all duration-300 group-hover:scale-110">
               <ChevronRightIcon className="relative left-px h-4 w-4" />
             </span>
           </a>

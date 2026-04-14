@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "React Bits Pro - Minimal Template",
-  tagline: "Read smarter, not longer",
+  name: "Bush Taxi Drumming School",
+  tagline: "Learn the rhythms, feel the culture",
   description:
-    "AI-powered summaries for articles, videos, and documents. Save hours every week.",
+    "West African Drumming School — immersive classes, workshops, and cultural experiences rooted in tradition.",
   url: "https://example.com",
   ogImage: "/og-image.png",
-  creator: "@tldr",
+  creator: "@bushtaxi",
   authors: [
     {
-      name: "TLDR Technologies",
+      name: "Bush Taxi Drumming School",
       url: "https://example.com",
     },
   ],
   keywords: [
-    "AI summarizer",
-    "article summary",
-    "TLDR",
-    "content summarization",
-    "productivity",
-    "reading assistant",
+    "West African drumming",
+    "djembe classes",
+    "drumming school",
+    "African music",
+    "drum workshop",
+    "cultural experience",
+    "Bush Taxi",
   ],
 } as const;
 

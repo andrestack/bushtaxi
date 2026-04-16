@@ -4,7 +4,7 @@ import { ChevronRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
@@ -60,8 +60,14 @@ function GitHubIcon({ className }: { className?: string }): ReactNode {
 }
 
 export function Footer(): ReactNode {
+  const [year, setYear] = useState(2024);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
-    <footer className="bg-accent px-6 py-16 text-black md:px-12 lg:px-20 rounded-tr-4xl rounded-tl-4xl border-t-2 border-black">
+    <footer className="bg-accent rounded-tl-4xl rounded-tr-4xl border-t-2 border-black px-6 py-16 text-black md:px-12 lg:px-20">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <motion.div className="max-w-md" {...fadeInUp}>
@@ -73,23 +79,26 @@ export function Footer(): ReactNode {
               className="mb-6 h-20 w-auto"
             />
             <p className="text-lg leading-relaxed text-black/80">
-              Ready to read smarter? TLDR transforms any article into a concise summary,
-              helping you stay informed without the time commitment.
+              Ready to read smarter? TLDR transforms any article into a concise
+              summary, helping you stay informed without the time commitment.
             </p>
             <Link
               href="#"
-              className="group mt-8 inline-flex items-center gap-3 rounded-md border-2 border-black bg-white py-3 pl-4 pr-3 font-medium shadow-lg shadow-black/10 transition-all duration-500 ease-out hover:rounded-[50px] hover:bg-white/90 hover:shadow-xl hover:shadow-black/20"
+              className="group mt-8 inline-flex items-center gap-3 rounded-md border-2 border-black bg-white py-3 pr-3 pl-4 font-medium shadow-lg shadow-black/10 transition-all duration-500 ease-out hover:rounded-[50px] hover:bg-white/90 hover:shadow-xl hover:shadow-black/20"
             >
               <span>Get Started Free</span>
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-accent text-black transition-all duration-300 group-hover:scale-110">
-                <ChevronRightIcon className="h-4 w-4 relative left-px" />
+              <span className="bg-accent flex h-10 w-10 items-center justify-center rounded-full border-2 border-black text-black transition-all duration-300 group-hover:scale-110">
+                <ChevronRightIcon className="relative left-px h-4 w-4" />
               </span>
             </Link>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-8 lg:justify-items-end">
-            <motion.div {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.1 }}>
-              <h4 className="font-display mb-4 text-sm font-semibold uppercase tracking-wider text-black/50">
+            <motion.div
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: 0.1 }}
+            >
+              <h4 className="font-display mb-4 text-sm font-semibold tracking-wider text-black/50 uppercase">
                 Product
               </h4>
               <ul className="space-y-3">
@@ -105,8 +114,11 @@ export function Footer(): ReactNode {
                 ))}
               </ul>
             </motion.div>
-            <motion.div {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.2 }}>
-              <h4 className="font-display mb-4 text-sm font-semibold uppercase tracking-wider text-black/50">
+            <motion.div
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: 0.2 }}
+            >
+              <h4 className="font-display mb-4 text-sm font-semibold tracking-wider text-black/50 uppercase">
                 Company
               </h4>
               <ul className="space-y-3">
@@ -129,18 +141,22 @@ export function Footer(): ReactNode {
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <motion.div {...fadeInUp}>
-            <h2 className="font-display text-6xl font-medium leading-none tracking-tight uppercase md:text-7xl lg:text-8xl">
+            <h2 className="font-display text-6xl leading-none font-medium tracking-tight uppercase md:text-7xl lg:text-8xl">
               Reach
               <br />
               Out To Us
             </h2>
             <p className="mt-8 text-sm text-black/50">
-              &copy; {new Date().getFullYear()} TLDR Technologies Inc.
+              &copy; {year} TLDR Technologies Inc.
             </p>
           </motion.div>
 
           <div className="flex flex-col justify-between gap-8 lg:items-end lg:text-right">
-            <motion.div className="space-y-6" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.1 }}>
+            <motion.div
+              className="space-y-6"
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: 0.1 }}
+            >
               <div>
                 <h4 className="mb-1 font-semibold">San Francisco</h4>
                 <p className="text-black/70">
@@ -159,12 +175,16 @@ export function Footer(): ReactNode {
               </a>
             </motion.div>
 
-            <motion.div className="flex items-center gap-4 lg:justify-end" {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.2 }}>
+            <motion.div
+              className="flex items-center gap-4 lg:justify-end"
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: 0.2 }}
+            >
               {socialLinks.map(({ label, icon: Icon, href }) => (
                 <a
                   key={label}
                   href={href}
-                  className="flex h-10 w-10 items-center justify-center rounded-md border-2 border-black bg-black/10 text-black transition-all duration-300 hover:scale-110 hover:bg-black hover:text-accent"
+                  className="hover:text-accent flex h-10 w-10 items-center justify-center rounded-md border-2 border-black bg-black/10 text-black transition-all duration-300 hover:scale-110 hover:bg-black"
                   aria-label={label}
                 >
                   <Icon className="h-4 w-4" />

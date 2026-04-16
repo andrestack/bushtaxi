@@ -1,17 +1,26 @@
 @import "tailwindcss";
 
+/* Explicit font-face for Garda Empty */
+@font-face {
+  font-family: "GardaEmpty";
+  src: url("/fonts/Gardaempty.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #F0BB78;
+  --background: #f0bb78;
   --foreground: #000000;
-  --muted: #F5D5A0;
-  --muted-foreground: #4A3520;
+  --muted: #f5d5a0;
+  --muted-foreground: #4a3520;
   --border: #000000;
-  --accent: #F24847;
-  --accent-blue: #53ACDD;
-  --ring: #53ACDD;
+  --accent: #f24847;
+  --accent-blue: #53acdd;
+  --ring: #53acdd;
   --menu-card: #1a1a1a;
   --font-sans: var(--font-manrope), system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-garda-empty), "Garda Empty", sans-serif;
+  --font-display: "GardaEmpty", Georgia, serif;
 }
 
 @theme inline {
@@ -33,7 +42,8 @@ html {
   overflow-x: hidden;
 }
 
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 

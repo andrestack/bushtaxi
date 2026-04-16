@@ -15,10 +15,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ["var(--font-garda-empty)", "Garda Empty", "sans-serif"],
-        sans: ["var(--font-manrope)", "Manrope", "sans-serif"],
+        display: ["GardaEmpty", "Georgia", "serif"],
+        sans: ["var(--font-manrope)", "Manrope", "system-ui", "sans-serif"],
       },
     },
   },
   plugins: [],
-}
+};

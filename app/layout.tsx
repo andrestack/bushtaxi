@@ -5,19 +5,12 @@ import { SkipToContent } from "@/components/skip-to-content";
 import { baseMetadata } from "@/lib/metadata";
 import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
-import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import "./globals.css";
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const gardaEmpty = localFont({
-  src: "../fonts/Gardaempty.ttf",
-  variable: "--font-garda-empty",
   display: "swap",
 });
 
@@ -36,9 +29,10 @@ export default function RootLayout({
   children: ReactNode;
 }>): ReactNode {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${gardaEmpty.variable} relative min-h-screen bg-background font-sans text-foreground antialiased`}
+        className={`${manrope.variable} bg-background text-foreground relative min-h-screen font-sans antialiased`}
+        suppressHydrationWarning
       >
         <Providers>
           <SkipToContent />

@@ -8,10 +8,12 @@ import DitherCursor from "./dither-cursor";
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export function FinalCTA(): ReactNode {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   // Check for mobile on mount
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -29,7 +31,7 @@ export function FinalCTA(): ReactNode {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: easeOut }}
       >
-        {!isMobile && (
+        {mounted && !isMobile && (
           <DitherCursor
             color="#F24847"
             radius={0.1}
@@ -62,7 +64,7 @@ export function FinalCTA(): ReactNode {
 
           <motion.a
             href="#"
-            className="group inline-flex w-full items-center justify-center gap-3 rounded-md border-2 border-black bg-white py-3 pl-5 pr-3 font-medium text-black transition-all duration-500 ease-out hover:rounded-[50px] hover:shadow-lg sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-3 rounded-md border-2 border-black bg-white py-3 pr-3 pl-5 font-medium text-black transition-all duration-500 ease-out hover:rounded-[50px] hover:shadow-lg sm:w-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.02 }}
@@ -70,8 +72,8 @@ export function FinalCTA(): ReactNode {
             transition={{ duration: 0.6, delay: 0.3, ease: easeOut }}
           >
             <span>Add to Chrome</span>
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-accent text-black transition-all duration-300 group-hover:scale-110">
-              <ChevronRightIcon className="h-4 w-4 relative left-px" />
+            <span className="bg-accent flex h-10 w-10 items-center justify-center rounded-full border-2 border-black text-black transition-all duration-300 group-hover:scale-110">
+              <ChevronRightIcon className="relative left-px h-4 w-4" />
             </span>
           </motion.a>
         </div>

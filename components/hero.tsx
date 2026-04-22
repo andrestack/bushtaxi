@@ -7,7 +7,7 @@ import { useRef, type ReactNode } from "react";
 import RotatingCards, { type Card } from "./rotating-cards";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
-const headlineText = "No More Time To Waste";
+const headlineText = "Learn West African Drumming";
 
 const cardData = [
   { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
@@ -46,7 +46,7 @@ export function Hero(): ReactNode {
       className="relative flex min-h-dvh flex-col items-center justify-start overflow-hidden px-6 pt-40 sm:pt-82"
     >
       <div className="relative z-10 mx-auto md:text-center">
-        <h1 className="font-display mb-8 text-5xl font-medium tracking-tighter uppercase md:text-8xl lg:text-8xl">
+        <h1 className="font-display mb-8 text-24xl font-medium tracking-[-0.09em] uppercase md:text-8xl lg:text-10xl">
           {headlineText.split("").map((char, index) => (
             <motion.span
               key={index}

@@ -7,7 +7,7 @@ import { useRef, type ReactNode } from "react";
 import RotatingCards, { type Card } from "./rotating-cards";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
-const headlineText = "Learn West African Drumming";
+const headlineText = "Learn Djembe & Dunduns";
 
 const cardData = [
   { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
@@ -46,7 +46,7 @@ export function Hero(): ReactNode {
       className="relative flex min-h-dvh flex-col items-center justify-start overflow-hidden px-6 pt-40 sm:pt-82"
     >
       <div className="relative z-10 mx-auto md:text-center">
-        <h1 className="font-display mb-8 text-24xl font-medium tracking-[-0.09em] uppercase md:text-8xl lg:text-10xl">
+        <h1 className="font-display mb-8 text-8xl font-medium tracking-[-0.09em] uppercase md:text-8xl lg:text-10xl">
           {headlineText.split("").map((char, index) => (
             <motion.span
               key={index}
@@ -74,18 +74,18 @@ export function Hero(): ReactNode {
           }}
           className="text-muted-foreground mx-auto mt-6 max-w-xl text-2xl leading-12 tracking-tight md:text-3xl"
         >
-          <span className="text-foreground inline-block rounded-md border-2 border-black px-2 py-0.5 leading-10">
-            Read less
+          {/* <span className="text-foreground inline-block rounded-md border-2 border-black px-2 py-0.5 leading-10">
+            Play more
           </span>{" "}
           &{" "}
           <span className="text-foreground inline-block rounded-md border-2 border-black px-4 py-0.5 leading-10">
-            know more
-          </span>{" "}
-          Save{" "}
+            hear more  
+          </span>{" "} */}
+          Learn to play{" "}
           <span className="text-foreground inline-block rounded-md border-2 border-black px-2 py-0.5 leading-10">
-            hours
+            West African Percussion
           </span>{" "}
-          every week with AI summaries done right.
+          every week in the Noosa Hinterland.
         </motion.p>
       </div>
 
@@ -126,8 +126,8 @@ export function Hero(): ReactNode {
         transition={{ duration: 0.8, ease: easeOut }}
       >
         <h2 className="font-display max-w-3xl text-3xl font-medium tracking-tight uppercase md:text-5xl lg:text-6xl">
-          Turn Hours of Content <br />
-          Into Fast Insight
+          Sweat, Drum & Tears <br />
+          of Happiness
         </h2>
         <motion.a
           href="#"
@@ -137,12 +137,13 @@ export function Hero(): ReactNode {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: easeOut, delay: 0.2 }}
         >
-          <span>Get Started Free</span>
+          <span>More Info</span>
           <span className="bg-background text-foreground flex h-10 w-10 items-center justify-center rounded-full border-2 border-black transition-all duration-300 group-hover:scale-110">
             <ChevronRightIcon className="relative left-px h-4 w-4" />
           </span>
         </motion.a>
       </motion.div>
+
     </section>
   );
 }

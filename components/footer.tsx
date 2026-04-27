@@ -72,15 +72,15 @@ export function Footer(): ReactNode {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <motion.div className="max-w-md" {...fadeInUp}>
             <Image
-              src="/img/bushtaxi.svg"
+              src="/img/bushtaxi2.svg"
               alt="Bush Taxi"
               width={200}
               height={80}
               className="mb-6 h-20 w-auto"
             />
             <p className="text-lg leading-relaxed text-black/80">
-              Ready to read smarter? TLDR transforms any article into a concise
-              summary, helping you stay informed without the time commitment.
+              Ready to step into some propert rhythm? <br />
+              Bush Taxi will take you on a journey of music, culture and joyful energy!
             </p>
             <Link
               href="#"
@@ -140,15 +140,16 @@ export function Footer(): ReactNode {
         <div className="my-16 h-px bg-black/20" />
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
-          <motion.div {...fadeInUp}>
-            <h2 className="font-display text-6xl leading-none font-medium tracking-tight uppercase md:text-7xl lg:text-8xl">
-              Reach
-              <br />
-              Out To Us
-            </h2>
-            <p className="mt-8 text-sm text-black/50">
-              &copy; {year} TLDR Technologies Inc.
-            </p>
+          <motion.div className="flex flex-col justify-between h-full" {...fadeInUp}>
+            <Image
+              src="/img/tinab.png"
+              alt="This is not a bongo"
+              width={721}
+              height={333}
+              className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto"
+            />
+            <p className="text-sm text-black/50">
+              &copy; {year} Bush Taxi            </p>
           </motion.div>
 
           <div className="flex flex-col justify-between gap-8 lg:items-end lg:text-right">
@@ -158,20 +159,20 @@ export function Footer(): ReactNode {
               transition={{ ...fadeInUp.transition, delay: 0.1 }}
             >
               <div>
-                <h4 className="mb-1 font-semibold">San Francisco</h4>
+                <h4 className="mb-1 font-semibold">Pomona</h4>
                 <p className="text-black/70">
-                  548 Market St, Suite 95000
+                  Pomona Community Hall
                   <br />
-                  San Francisco, CA 94104
+                  QLD 4568
                   <br />
-                  Mon-Fri 9:00 am - 6:00 pm (PST)
+                  Thursdays 6-7:30pm
                 </p>
               </div>
               <a
-                href="mailto:hello@tldr.app"
+                href="mailto:mail@andresilva.online"
                 className="inline-block text-lg font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
               >
-                hello@tldr.app
+                mail@andresilva.online
               </a>
             </motion.div>
 

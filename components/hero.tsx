@@ -4,24 +4,23 @@ import { ChevronRight as ChevronRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { useRef, type ReactNode } from "react";
+import { heroConfig } from "@/lib/config";
 import RotatingCards, { type Card } from "./rotating-cards";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
-const headlineText = "Learn Djembe & Dunduns";
+const headlineText = `${heroConfig.headline.prefix} ${heroConfig.headline.accent} ${heroConfig.headline.suffix}`;
 
-const cardData = [
-  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
-  { label: "Hari", image: "/img/hari.svg" },
-  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
-  { label: "Lenke", image: "/img/lenke.svg" },
-  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
-  { label: "Hari", image: "/img/hari.svg" },
-  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
-  { label: "Lenke", image: "/img/lenke.svg" },
-  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
-  { label: "Hari", image: "/img/hari.svg" },
-  { label: "Bush Taxi", image: "/img/bushtaxi2.svg" },
+const carouselLabels = heroConfig.carousel;
+const carouselImages = [
+  "/img/bushtaxi2.svg",
+  "/img/hari.svg",
+  "/img/lenke.svg",
 ];
+
+const cardData = carouselLabels.map((label, index) => ({
+  label,
+  image: carouselImages[index % carouselImages.length] || "/img/bushtaxi2.svg",
+}));
 
 const carouselCards: Card[] = cardData.map((card, index) => ({
   id: index + 1,
@@ -74,18 +73,15 @@ export function Hero(): ReactNode {
           }}
           className="text-muted-foreground mx-auto mt-6 max-w-xl text-2xl leading-12 tracking-tight md:text-3xl"
         >
-          {/* <span className="text-foreground inline-block rounded-md border-2 border-black px-2 py-0.5 leading-10">
-            Play more
-          </span>{" "}
-          &{" "}
-          <span className="text-foreground inline-block rounded-md border-2 border-black px-4 py-0.5 leading-10">
-            hear more  
-          </span>{" "} */}
           Learn to play{" "}
           <span className="text-foreground inline-block rounded-md border-2 border-black px-2 py-0.5 leading-10">
             West African Percussion
           </span>{" "}
           every week in the Noosa Hinterland.
+          <br />
+          <span className="mt-2 block text-lg">
+            {heroConfig.description}
+          </span>
         </motion.p>
       </div>
 
@@ -130,20 +126,19 @@ export function Hero(): ReactNode {
           of Happiness
         </h2>
         <motion.a
-          href="#"
+          href={heroConfig.cta.primary.href}
           className="bg-accent group shadow-accent/25 hover:shadow-accent/40 mt-8 inline-flex w-full items-center justify-center gap-3 rounded-md border-2 border-black py-3 pr-3 pl-5 font-medium text-black shadow-lg transition-all duration-500 ease-out hover:rounded-[50px] hover:shadow-xl sm:w-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: easeOut, delay: 0.2 }}
         >
-          <span>More Info</span>
+          <span>{heroConfig.cta.primary.text}</span>
           <span className="bg-background text-foreground flex h-10 w-10 items-center justify-center rounded-full border-2 border-black transition-all duration-300 group-hover:scale-110">
             <ChevronRightIcon className="relative left-px h-4 w-4" />
           </span>
         </motion.a>
       </motion.div>
-
     </section>
   );
 }

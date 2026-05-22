@@ -1,9 +1,9 @@
 "use client";
 
-import { ChevronRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { featuresConfig } from "@/lib/config";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
@@ -14,29 +14,12 @@ interface Feature {
   image: string;
 }
 
-const features: Feature[] = [
-  {
-    number: "01",
-    title: "Summarize content",
-    description:
-      "Articles, videos, podcasts, PDFs, research papers — TLDR handles them all.",
-    image: "/img/bushtaxi.svg",
-  },
-  {
-    number: "02",
-    title: "Extract insights",
-    description:
-      "Get the main points, not just a shortened version. Summaries that save you time.",
-    image: "/img/lenke.svg",
-  },
-  {
-    number: "03",
-    title: "Save & organize",
-    description:
-      "Build your personal knowledge library. Tag, search, and revisit summaries anytime.",
-    image: "/img/hari.svg",
-  },
-];
+const features: Feature[] = featuresConfig.features.map((f) => ({
+  number: f.number,
+  title: f.title,
+  description: f.description,
+  image: f.image,
+}));
 
 function FeatureCard({
   feature,
@@ -96,21 +79,11 @@ export function Features(): ReactNode {
           transition={{ duration: 0.6, ease: easeOut }}
         >
           <h2 className="font-display mb-4 text-2xl font-medium tracking-tight uppercase md:mb-6 md:text-3xl lg:text-4xl">
-            Turn insights into action
+            {featuresConfig.title}
           </h2>
           <p className="text-muted-foreground mb-6 max-w-sm text-base md:mb-8 md:text-lg">
-            TLDR helps you consume content faster and always extracts what
-            matters.
+            {featuresConfig.description}
           </p>
-          <a
-            href="#"
-            className="bg-foreground group inline-flex w-full items-center justify-center gap-3 rounded-md border-2 border-black py-3 pr-3 pl-5 font-medium text-background transition-all duration-500 ease-out hover:rounded-[50px] sm:w-auto"
-          >
-            <span>Get Started Free</span>
-            <span className="bg-background text-foreground flex h-10 w-10 items-center justify-center rounded-full border-2 border-black transition-all duration-300 group-hover:scale-110">
-              <ChevronRightIcon className="relative left-px h-4 w-4" />
-            </span>
-          </a>
         </motion.div>
 
         {/* Scrolling right column */}

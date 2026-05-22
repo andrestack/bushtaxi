@@ -2,44 +2,29 @@
 
 import { motion, useInView, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef, type ReactNode } from "react";
+import { statsConfig } from "@/lib/config";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
-const stats = [
-  {
-    value: 10,
-    suffix: "M+",
-    label: "Summaries Generated",
-  },
-  {
-    value: 50,
-    suffix: "K+",
-    label: "Active Users",
-  },
-  {
-    value: 4.9,
-    suffix: "★",
-    label: "Average Rating",
-    decimals: 1,
-  },
-  {
-    value: 98,
-    suffix: "%",
-    label: "Time Saved",
-  },
-];
+const stats = statsConfig.stats.map((stat) => ({
+  value: stat.number,
+  label: stat.label,
+  description: stat.description,
+}));
+
+function isNumeric(str: string): boolean {
+  return /^\d+$/.test(str);
+}
 
 function AnimatedNumber({
   value,
-  suffix,
-  decimals = 0,
 }: {
-  value: number;
-  suffix: string;
-  decimals?: number;
+  value: string;
 }): ReactNode {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  const numericValue = isNumeric(value) ? parseInt(value, 10) : null;
 
   const spring = useSpring(0, {
     stiffness: 50,
@@ -48,25 +33,30 @@ function AnimatedNumber({
   });
 
   const display = useTransform(spring, (current) =>
-    decimals > 0 ? current.toFixed(decimals) : Math.floor(current).toString()
+    Math.floor(current).toString()
   );
 
   useEffect(() => {
-    if (isInView) {
-      spring.set(value);
+    if (isInView && numericValue !== null) {
+      spring.set(numericValue);
     }
-  }, [isInView, spring, value]);
+  }, [isInView, spring, numericValue]);
 
   useEffect(() => {
+    if (numericValue === null) return;
     const unsubscribe = display.on("change", (latest) => {
       if (ref.current) {
-        ref.current.textContent = latest + suffix;
+        ref.current.textContent = latest;
       }
     });
     return () => unsubscribe();
-  }, [display, suffix]);
+  }, [display, numericValue]);
 
-  return <span ref={ref}>0{suffix}</span>;
+  if (numericValue === null) {
+    return <span ref={ref}>{value}</span>;
+  }
+
+  return <span ref={ref}>0</span>;
 }
 
 function StatCard({
@@ -92,11 +82,7 @@ function StatCard({
       }}
     >
       <div className="font-display text-foreground text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl">
-        <AnimatedNumber
-          value={stat.value}
-          suffix={stat.suffix}
-          decimals={stat.decimals ?? 0}
-        />
+        <AnimatedNumber value={stat.value} />
       </div>
       <p className="text-muted-foreground mt-3 text-base md:text-lg">
         {stat.label}
@@ -120,8 +106,11 @@ export function Stats(): ReactNode {
           transition={{ duration: 0.6, ease: easeOut }}
         >
           <h2 className="font-display text-3xl font-medium tracking-tight uppercase md:text-4xl lg:text-5xl">
-            Trusted by Readers Worldwide
+            {statsConfig.title}
           </h2>
+          <p className="text-muted-foreground mt-4 text-lg max-w-2xl mx-auto">
+            {statsConfig.description}
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12">

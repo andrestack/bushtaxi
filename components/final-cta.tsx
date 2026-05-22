@@ -3,6 +3,7 @@
 import { ChevronRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState, type ReactNode } from "react";
+import { finalCtaConfig } from "@/lib/config";
 import DitherCursor from "./dither-cursor";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
@@ -48,22 +49,21 @@ export function FinalCTA(): ReactNode {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: easeOut }}
           >
-            Ready to save hours every week?
+            {finalCtaConfig.headline}
           </motion.h2>
 
           <motion.p
-            className="mx-auto mb-10 max-w-md text-lg text-black/70"
+            className="mx-auto mb-10 max-w-lg text-lg text-black/70"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2, ease: easeOut }}
           >
-            Join thousands who read smarter. Install the extension and start
-            summarizing in seconds.
+            {finalCtaConfig.description}
           </motion.p>
 
           <motion.a
-            href="#"
+            href={finalCtaConfig.cta.href}
             className="group inline-flex w-full items-center justify-center gap-3 rounded-md border-2 border-black bg-white py-3 pr-3 pl-5 font-medium text-black transition-all duration-500 ease-out hover:rounded-[50px] hover:shadow-lg sm:w-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,11 +71,23 @@ export function FinalCTA(): ReactNode {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3, ease: easeOut }}
           >
-            <span>Add to Chrome</span>
+            <span>{finalCtaConfig.cta.text}</span>
             <span className="bg-accent flex h-10 w-10 items-center justify-center rounded-full border-2 border-black text-black transition-all duration-300 group-hover:scale-110">
               <ChevronRightIcon className="relative left-px h-4 w-4" />
             </span>
           </motion.a>
+
+          {finalCtaConfig.note && (
+            <motion.p
+              className="mt-6 text-sm text-black/60"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              {finalCtaConfig.note}
+            </motion.p>
+          )}
         </div>
       </motion.div>
     </section>

@@ -3,53 +3,21 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
+import { testimonialsConfig } from "@/lib/config";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
 interface Testimonial {
-  title: string;
-  description: string;
+  quote: string;
   name: string;
   role: string;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    title: "10 Hours Saved Every Week",
-    description:
-      "I used to spend hours reading through research papers and articles. Now TLDR gives me the key insights in seconds. It's completely changed how I consume content.",
-    name: "Sarah Chen",
-    role: "Product Manager at Stripe",
-  },
-  {
-    title: "My Secret Productivity Weapon",
-    description:
-      "As a busy professional, I don't have time to watch every video or read every article. TLDR lets me stay informed without the time commitment.",
-    name: "Marcus Johnson",
-    role: "Senior Engineer at Vercel",
-  },
-  {
-    title: "Works With Everything",
-    description:
-      "Articles, YouTube videos, podcasts, PDFs—TLDR handles it all. One tool for all my summarization needs. The consistency is remarkable.",
-    name: "Elena Rodriguez",
-    role: "Content Strategist at Notion",
-  },
-  {
-    title: "Actually Useful AI",
-    description:
-      "Unlike other AI tools that give generic responses, TLDR actually captures what matters. The summaries are accurate and save me from information overload.",
-    name: "David Park",
-    role: "Research Lead at OpenAI",
-  },
-  {
-    title: "Perfect for Research",
-    description:
-      "I go through dozens of papers weekly. TLDR helps me quickly identify which ones deserve a deeper read. It's become essential to my workflow.",
-    name: "Priya Sharma",
-    role: "PhD Candidate at MIT",
-  },
-];
+const testimonials: Testimonial[] = testimonialsConfig.testimonials.map((t) => ({
+  quote: t.quote,
+  name: t.name,
+  role: t.role,
+}));
 
 export function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -62,10 +30,10 @@ export function Testimonials() {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
       const maxScroll = scrollWidth - clientWidth;
       const remainingScroll = maxScroll - scrollLeft;
-      
+
       setCanScrollLeft(scrollLeft > 1);
       setCanScrollRight(scrollLeft < maxScroll - 1);
-      
+
       // Fade out the gradient when approaching the end (last 150px of scroll)
       const fadeThreshold = 150;
       setFadeOpacity(Math.min(1, remainingScroll / fadeThreshold));
@@ -122,7 +90,7 @@ export function Testimonials() {
           transition={{ duration: 0.6, ease: easeOut }}
         >
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight uppercase text-foreground">
-            What People Are Saying
+            {testimonialsConfig.title}
           </h2>
 
           <div className="flex items-center gap-4">
@@ -156,17 +124,14 @@ export function Testimonials() {
                 key={index}
                 className="flex-none w-[calc(100vw-3rem)] md:w-100 h-112.5 bg-muted rounded-md border-2 border-black p-8 md:p-10 flex flex-col justify-between snap-start"
               >
-                <h3 className="font-display text-3xl md:text-4xl font-medium leading-[1.1] tracking-tight uppercase">
-                  {item.title}
-                </h3>
-                <div>
-                  <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    {item.description}
+                <div className="flex-1 flex items-center">
+                  <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed italic">
+                    &ldquo;{item.quote}&rdquo;
                   </p>
-                  <div>
-                    <p className="font-medium text-foreground">{item.name}</p>
-                    <p className="text-sm text-muted-foreground">{item.role}</p>
-                  </div>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground text-lg">{item.name}</p>
+                  <p className="text-sm text-muted-foreground">{item.role}</p>
                 </div>
               </div>
             ))}

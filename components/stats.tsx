@@ -72,7 +72,7 @@ function StatCard({
   return (
     <motion.div
       ref={ref}
-      className="text-center"
+      className="text-center transition-all duration-300 hover:-translate-y-2 cursor-pointer group"
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{
@@ -80,8 +80,9 @@ function StatCard({
         delay: index * 0.1,
         ease: easeOut,
       }}
+      whileHover={{ scale: 1.05 }}
     >
-      <div className="font-display text-foreground text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl">
+      <div className="font-display text-foreground text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl transition-transform duration-300 group-hover:scale-110">
         <AnimatedNumber value={stat.value} />
       </div>
       <p className="text-muted-foreground mt-3 text-base md:text-lg">

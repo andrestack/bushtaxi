@@ -120,9 +120,13 @@ export function Testimonials() {
             style={{ scrollPaddingInline: "1.5rem" }}
           >
             {testimonials.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex-none w-[calc(100vw-3rem)] md:w-100 h-112.5 bg-muted rounded-md border-2 border-black p-8 md:p-10 flex flex-col justify-between snap-start"
+                className="flex-none w-[calc(100vw-3rem)] md:w-100 h-112.5 bg-muted rounded-md border-2 border-black p-8 md:p-10 flex flex-col justify-between snap-start transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: easeOut }}
               >
                 <div className="flex-1 flex items-center">
                   <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed italic">
@@ -133,7 +137,7 @@ export function Testimonials() {
                   <p className="font-medium text-foreground text-lg">{item.name}</p>
                   <p className="text-sm text-muted-foreground">{item.role}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
           <div

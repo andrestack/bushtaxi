@@ -5,6 +5,7 @@ import { SkipToContent } from "@/components/skip-to-content";
 import { baseMetadata } from "@/lib/metadata";
 import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
+import { ViewTransitions } from "next-view-transitions";
 import type { ReactNode } from "react";
 import "./globals.css";
 
@@ -25,21 +26,21 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: ReactNode;
-}>): ReactNode {
+}: Readonly<{ children: ReactNode }>): ReactNode {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${manrope.variable} bg-background text-foreground relative min-h-screen font-sans antialiased`}
         suppressHydrationWarning
       >
-        <Providers>
-          <SkipToContent />
-          <Header />
-          {children}
-          <Footer />
-        </Providers>
+        <ViewTransitions>
+          <Providers>
+            <SkipToContent />
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
+        </ViewTransitions>
       </body>
     </html>
   );

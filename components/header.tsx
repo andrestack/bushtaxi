@@ -3,7 +3,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import React, { useState, useSyncExternalStore, type ReactNode } from "react";
 import { siteConfig } from "@/lib/config";
 
@@ -39,7 +39,7 @@ const menuCards = [
     id: "info",
     title: "INFO",
     links: [
-      { label: "About", href: "#", badge: null },
+      { label: "About", href: "/about", badge: null },
       { label: "Blog", href: "#", badge: null },
       { label: "Contact", href: "mailto:mail@andresilva.online", badge: null },
     ],

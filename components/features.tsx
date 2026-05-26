@@ -1,6 +1,8 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { featuresConfig } from "@/lib/config";
@@ -84,6 +86,13 @@ export function Features(): ReactNode {
           <p className="text-muted-foreground mb-6 max-w-sm text-base md:mb-8 md:text-lg">
             {featuresConfig.description}
           </p>
+          <Link
+            href="/about"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-foreground transition-all duration-300 hover:gap-3"
+          >
+            <span className="underline underline-offset-4">Read our story</span>
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
         </motion.div>
 
         {/* Scrolling right column */}

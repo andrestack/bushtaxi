@@ -3,7 +3,7 @@
 import { ChevronRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useState, useEffect, type ReactNode } from "react";
 import { footerConfig, siteConfig } from "@/lib/config";
 

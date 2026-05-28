@@ -172,28 +172,28 @@ function PillarsSection(): ReactNode {
   );
 }
 
-function ClosingQuote(): ReactNode {
-  const { ref, isInView } = useReveal();
+// function ClosingQuote(): ReactNode {
+//   const { ref, isInView } = useReveal();
 
-  return (
-    <section className="bg-accent-blue px-6 py-20 md:px-12 md:py-28">
-      <motion.div
-        ref={ref}
-        className="mx-auto max-w-3xl text-center"
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: easeOut }}
-      >
-        <blockquote className="font-display mb-8 text-xl font-medium leading-relaxed tracking-tight text-black md:text-2xl lg:text-3xl">
-          &ldquo;{aboutConfig.closingQuote}&rdquo;
-        </blockquote>
-        <p className="text-black/60 text-sm uppercase tracking-wider">
-          — Andre Silva, Founder
-        </p>
-      </motion.div>
-    </section>
-  );
-}
+//   return (
+//     <section className="bg-accent-blue px-6 py-20 md:px-12 md:py-28">
+//       <motion.div
+//         ref={ref}
+//         className="mx-auto max-w-3xl text-center"
+//         initial={{ opacity: 0, y: 30 }}
+//         animate={isInView ? { opacity: 1, y: 0 } : {}}
+//         transition={{ duration: 0.8, ease: easeOut }}
+//       >
+//         <blockquote className="font-display mb-8 text-xl font-medium leading-relaxed tracking-tight text-black md:text-2xl lg:text-3xl">
+//           &ldquo;{aboutConfig.closingQuote}&rdquo;
+//         </blockquote>
+//         <p className="text-black/60 text-sm uppercase tracking-wider">
+//           — Andre Silva, Founder
+//         </p>
+//       </motion.div>
+//     </section>
+//   );
+// }
 
 function ContactCTA(): ReactNode {
   const { ref, isInView } = useReveal();
@@ -242,7 +242,7 @@ export function AboutPage(): ReactNode {
 
       <QuoteSection />
       <PillarsSection />
-      <ClosingQuote />
+      {/* <ClosingQuote /> */}
       <ContactCTA />
     </main>
   );

@@ -10,13 +10,15 @@ const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export function FinalCTA(): ReactNode {
   const [isMobile, setIsMobile] = useState(true);
-  const [mounted, setMounted] = useState(false);
+  // Use lazy initializer for hydration safety - this runs only on client in "use client" components
+  const [mounted, setMounted] = useState(() => false);
 
   // Check for mobile on mount
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth >= 768);
     };
     checkMobile();
     window.addEventListener("resize", checkMobile);

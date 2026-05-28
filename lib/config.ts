@@ -26,9 +26,9 @@ export const siteConfig = {
 
 export const heroConfig = {
   headline: {
-    prefix: "Sweat,",
-    accent: "Drum",
-    suffix: "& Tears of Happiness",
+    prefix: "Learn",
+    accent: "Djembe",
+    suffix: "& Dununs",
   },
   description: "Learn to play West African Percussion every week in the Noosa Hinterland. Two instruments. One rhythm. Zero experience needed.",
   cta: {
@@ -59,11 +59,11 @@ export const howItWorksConfig = {
   steps: [
     {
       title: "Show Up & Feel the Beat",
-      description: "Your first class is free. We provide the drums. You bring energy, curiosity, and clothes you don't mind sweating in. We'll teach you the basics of holding the drum, the first rhythms, and how to listen to the group.",
+      description: "Your first class is free. Bring your drum or rent on the spot. You bring energy, curiosity, and clothes you don't mind sweating in. We'll teach you the basics, the first rhythms, and how to play in a group.",
     },
     {
       title: "Learn Dundun & Djembe",
-      description: "Unlike most schools that only teach Djembe, we teach both instruments from day one. Dundun is the deep heartbeat. Djembe is the fire on top. Together, they tell the full story of West African rhythm.",
+      description: "Unlike most schools that only teach Djembe, we also teach Dunduns, the bass drums, from day one. They are the heartbeat. Djembe is the fire on top. Together, they tell the full story of West African percussion.",
     },
     {
       title: "Sweat, Smile & Repeat",
@@ -78,25 +78,25 @@ export const howItWorksConfig = {
 
 export const featuresConfig = {
   title: "Why Bush Taxi Is Different",
-  description: "Most schools teach Djembe and call it a day. We go deeper. Because in West Africa, these instruments have never been separated.",
+  description: "Most schools teach Djembe and call it a day. We also teach Dunduns. Because in West Africa, these instruments are almost never played separate.",
   features: [
     {
       number: "01",
       title: "Learn Dundun & Djembe",
       description: "Dundun provides the deep bass heartbeat. Djembe adds the melody and fire. Culturally and traditionally, they cannot live without each other — and neither should your learning. We teach both from your very first class.",
-      image: "/img/bushtaxi.svg",
+      image: "/img/about2.jpg",
     },
     {
       number: "02",
       title: "Rooted in West African Tradition",
       description: "This music is played daily for baptisms, weddings, funerals, harvest festivals, and coming-of-age ceremonies. It's not a hobby — it's a living culture. We respect the tradition while making it accessible to everyone.",
-      image: "/img/lenke.svg",
+      image: "/img/about6.jpg",
     },
     {
       number: "03",
       title: "Sweat, Drum & Feel Alive",
       description: "Drumming is probably the only instrument you can hit as hard as you want and you won't break it. It's physical. It's cathartic. It's a full-body workout that leaves you energised, grounded, and grinning.",
-      image: "/img/hari.svg",
+      image: "/img/about14.webp",
     },
   ],
 } as const;
@@ -106,8 +106,8 @@ export const statsConfig = {
   description: "Two decades of drumming. Thousands of hours of practice. A passion that keeps growing.",
   stats: [
     { number: "2002", label: "Playing Since", description: "Over 20 years of deep immersion in West African percussion" },
-    { number: "6–8", label: "Hours Rehearsed Weekly", description: "At the peak, practicing 6 to 8 hours every week" },
-    { number: "3", label: "Countries Taught In", description: "Australia, Germany, and Portugal — plus studying in West Africa" },
+    { number: "1000s", label: "Hours Played", description: "At the peak, practicing 6 to 8 hours every week" },
+    { number: "4", label: "Countries Taught In", description: "Australia, Germany, Portugal and Brazil — plus studying in West Africa" },
     { number: "∞", label: "Joy Delivered", description: "The only instrument you can hit as hard as you want" },
   ],
 } as const;
@@ -213,7 +213,7 @@ export const faqConfig = {
 
 export const finalCtaConfig = {
   headline: "Ready to Feel the Rhythm?",
-  description: "Your first class is free. The drums are waiting. The only thing missing is you. Come hit something hard, sweat a little, and go home with your hands buzzing and your heart full.",
+  description: "Your first class is free. The drums are waiting. The only thing missing is you. Come and groove, sweat a little, and go home with your hands buzzing and your heart full.",
   cta: {
     text: "Book Your Free Class",
     href: "mailto:mail@andresilva.online",
@@ -228,32 +228,32 @@ export const aboutConfig = {
     {
       title: "2002 — The Spark",
       body: "Andre started playing in 2002. What began as casual interest quickly became something deeper. He found himself rehearsing 6 to 8 hours a week, listening to CDs on repeat, trying to mimic the masters — and falling completely in love with the instrument.",
-      image: "/img/placeholder-2002.jpg",
-      caption: "Early days of drumming",
+      image: "/img/about10.png",
+      caption: "This was 2014 in Berlin, don't have photos of 2002 😅",
     },
     {
       title: "Learning from the Masters",
       body: "Over the years, Andre studied with countless Jembe Folas (master drummers) across Europe and West Africa. Key teachers include Mohammed Bangura in West Africa, Buba Diakite in Berlin, and Nathan Berg at Beat Etage in Berlin — close friends and musical companions who shaped his path.",
-      image: "/img/placeholder-masters.jpg",
-      caption: "Studying with master drummers",
+      image: "/img/guinea1.jpg",
+      caption: "Conakry 2013 with Mohammed Bangoura",
     },
     {
       title: "The Dundun Difference",
-      body: "From the very beginning, Andre learned the Dunduns alongside the Djembe. That decision 'pushed his musicality to the moon.' While most drummers focus only on Djembe, Andre understood that the Dunduns are the heartbeat — without them, the rhythm has no foundation.",
-      image: "/img/placeholder-dundun.jpg",
-      caption: "Dundun — the heartbeat of the rhythm",
+      body: "From the very beginning, Andre learned the Dunduns alongside the Djembe. That decision 'pushed his musicality to the moon.' While most drummers focus only on Djembe, Andre was thought from the very beginning that the Dunduns are the heartbeat — without them, the rhythm has no foundation.",
+      image: "/img/about13.webp",
+      caption: "The Dundun player at ADC 2018: Dundund, Sangban and Kenkeni",
     },
     {
-      title: "Teaching Across 3 Countries",
-      body: "Andre's teaching journey spans Australia (school incursions in Brisbane & Sunshine Coast), Germany (school incursions in Berlin, gigs with Nathan Berg at Beat Etage), and Portugal (co-organizer of Alfa Djembe Camp, a week-long drum & dance event with international guests).",
-      image: "/img/placeholder-teaching.jpg",
-      caption: "Co-organizing Alfa Djembe Camp in Portugal",
+      title: "Teaching Across 4 Countries",
+      body: "Andre's teaching journey spans Brazil, Australia (school incursions in Brisbane & Sunshine Coast with Rhythm Culture), Germany (school incursions in Berlin, gigs with Nathan Berg at Beat Etage), and Portugal (co-organizer of Aldeia Djembe Camp, a week-long drum & dance event with international guests).",
+      image: "/img/about13.jpg",
+      caption: "Kids session at Aldeia Djembe Camp in Portugal 2019",
     },
     {
       title: "West Africa — In the Flesh",
       body: "Andre traveled to West Africa to study where this music was born. He played in several ballets (traditional drum and dance ensembles) and experienced firsthand what this music means to the artists there — and how deeply it is woven into their culture and daily life.",
-      image: "/img/placeholder-west-africa.jpg",
-      caption: "Playing in West African ballets",
+      image: "/img/about5.jpg",
+      caption: "Playing in with Ballet Sourakhata in Conakry",
     },
   ],
   philosophy: {
@@ -280,8 +280,8 @@ export const aboutConfig = {
 export const footerConfig = {
   description: "Bush Taxi Drumming School — Learn Dundun & Djembe in the Noosa Hinterland. Weekly classes, weekend intensives, and a whole lot of rhythm.",
   cta: {
-    text: "Book Free Class",
-    href: "mailto:mail@andresilva.online",
+    text: "Join the Mailing List",
+    href: "https://sendfox.com/lp/3oxljv",
   },
   links: {
     classes: [

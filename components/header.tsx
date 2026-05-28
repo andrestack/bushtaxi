@@ -40,7 +40,7 @@ const menuCards = [
     title: "INFO",
     links: [
       { label: "About", href: "/about", badge: null },
-      { label: "Blog", href: "#", badge: null },
+      // { label: "Blog", href: "#", badge: null },
       { label: "Contact", href: "mailto:mail@andresilva.online", badge: null },
     ],
   },
@@ -241,7 +241,7 @@ export function Header(): ReactNode {
           <div className="flex w-full items-center justify-between py-2 pr-2 pl-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/img/banner.svg"
+                src="/img/bushtaxi2.svg"
                 alt="Bush Taxi"
                 width={120}
                 height={32}

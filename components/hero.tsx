@@ -77,11 +77,13 @@ export function Hero(): ReactNode {
           <span className="text-foreground inline-block rounded-md border-2 border-black px-2 py-0.5 leading-10">
             West African Percussion
           </span>{" "}
-          every week in the Noosa Hinterland.
+          every week in the Noosa Hinterland. <br/>Four instruments.<span className="text-foreground inline-block rounded-md border-2 border-black px-2 py-0.5 leading-10">
+            Infinite rhythms.
+          </span>{" "}<br/> Zero experience needed.
           <br />
-          <span className="mt-2 block text-lg">
+          {/* <span className="mt-2 block text-lg">
             {heroConfig.description}
-          </span>
+          </span> */}
         </motion.p>
       </div>
 
@@ -101,8 +103,8 @@ export function Hero(): ReactNode {
               cards={carouselCards}
               radius={1000}
               cardClassName="!border-0 !shadow-none !bg-transparent !rounded-none"
-              cardWidth={350}
-              cardHeight={275}
+              cardWidth={650}
+              cardHeight={475}
               duration={100}
               pauseOnHover={true}
               autoPlay={true}

@@ -4,7 +4,7 @@ import { ChevronRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { Link } from "next-view-transitions";
-import { useState, useEffect, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { footerConfig, siteConfig } from "@/lib/config";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
@@ -27,11 +27,7 @@ const infoLinks = footerConfig.links.info.map((link) => ({
 }));
 
 export function Footer(): ReactNode {
-  const [year, setYear] = useState(2024);
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+  const [year] = useState(() => new Date().getFullYear());
 
   return (
     <footer className="bg-accent rounded-tl-4xl rounded-tr-4xl border-t-2 border-black px-6 py-16 text-black md:px-12 lg:px-20">
@@ -50,6 +46,8 @@ export function Footer(): ReactNode {
             </p>
             <Link
               href={footerConfig.cta.href}
+              target="_blank"
+            
               className="group mt-8 inline-flex items-center gap-3 rounded-md border-2 border-black bg-white py-3 pr-3 pl-4 font-medium shadow-lg shadow-black/10 transition-all duration-500 ease-out hover:rounded-[50px] hover:bg-white/90 hover:shadow-xl hover:shadow-black/20"
             >
               <span>{footerConfig.cta.text}</span>

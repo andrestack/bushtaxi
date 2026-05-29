@@ -300,9 +300,13 @@ export const footerConfig = {
     location: "Noosa Hinterland, QLD",
     email: "mail@andresilva.online",
     palmwoods: "Tuesdays, 5:30 PM (Rhythm Culture)",
+    palmwoodsUrl: "https://rhythmculture.com.au/",
     pomona: "Thursdays, 5:30–7:00 PM (Coming Soon)",
   },
-  copyright: `© ${new Date().getFullYear()} Bush Taxi Drumming School.`,
+  copyright: {
+    text: `© ${new Date().getFullYear()} Bush Taxi Drumming School. Website crafted by Hinterland Web.`,
+    hinterlandWebUrl: "https://hinterlandweb.com",
+  },
 } as const;
 
 /**

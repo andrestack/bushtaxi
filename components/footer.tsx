@@ -47,7 +47,6 @@ export function Footer(): ReactNode {
             <Link
               href={footerConfig.cta.href}
               target="_blank"
-            
               className="group mt-8 inline-flex items-center gap-3 rounded-md border-2 border-black bg-white py-3 pr-3 pl-4 font-medium shadow-lg shadow-black/10 transition-all duration-500 ease-out hover:rounded-[50px] hover:bg-white/90 hover:shadow-xl hover:shadow-black/20"
             >
               <span>{footerConfig.cta.text}</span>
@@ -113,7 +112,20 @@ export function Footer(): ReactNode {
               className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto"
             />
             <p className="text-sm text-black/50 mt-4">
-              &copy; {year} {siteConfig.name}            </p>
+              &copy; {year} Bush Taxi Drumming School. Website crafted by{" "}
+              {footerConfig.copyright.hinterlandWebUrl ? (
+                <a
+                  href={footerConfig.copyright.hinterlandWebUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-black"
+                >
+                  Hinterland Web
+                </a>
+              ) : (
+                "Hinterland Web"
+              )}
+            </p>
           </motion.div>
 
           <div className="flex flex-col justify-between gap-8 lg:items-end lg:text-right">
@@ -125,7 +137,20 @@ export function Footer(): ReactNode {
               <div>
                 <h4 className="mb-1 font-semibold">Palmwoods</h4>
                 <p className="text-black/70">
-                  {footerConfig.contact.palmwoods}
+                  Tuesdays, 5:30 PM ({" "}
+                  {footerConfig.contact.palmwoodsUrl ? (
+                    <a
+                      href={footerConfig.contact.palmwoodsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-black"
+                    >
+                      Rhythm Culture
+                    </a>
+                  ) : (
+                    "Rhythm Culture"
+                  )}
+                  )
                 </p>
               </div>
               <div>

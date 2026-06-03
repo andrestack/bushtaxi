@@ -10,11 +10,12 @@
 export const siteConfig = {
   name: "Bush Taxi",
   tagline: "West African Drumming School",
-  description: "Learn Dundun & Djembe in the Noosa Hinterland. Weekly classes, weekend intensives, and a whole lot of rhythm. First class free.",
-  url: "https://bushtaxi.com.au",
+  description:
+    "Learn Dundun & Djembe in the Noosa Hinterland. Weekly classes, weekend intensives, and a whole lot of rhythm. First class free.",
+  url: "https://djembe.andresilva.online ",
   social: {
-    twitter: "@bushtaxi",
-    instagram: "@bushtaxidrumming",
+    twitter: "",
+    instagram: "",
   },
   nav: {
     cta: {
@@ -30,7 +31,8 @@ export const heroConfig = {
     accent: "Djembe",
     suffix: "& Dununs",
   },
-  description: "Learn to play West African Percussion every week in the Noosa Hinterland. Two instruments. One rhythm. Zero experience needed.",
+  description:
+    "Learn to play West African Percussion every week in the Noosa Hinterland. Two instruments. One rhythm. Zero experience needed.",
   cta: {
     primary: {
       text: "Book Your Free Class",
@@ -55,19 +57,23 @@ export const heroConfig = {
 
 export const howItWorksConfig = {
   title: "Three Steps to Start Drumming",
-  description: "Begin your journey into West African rhythm. No experience needed — just show up ready to hit something.",
+  description:
+    "Begin your journey into West African rhythm. No experience needed — just show up ready to hit something.",
   steps: [
     {
       title: "Show Up & Feel the Beat",
-      description: "Your first class is free. Bring your drum or rent on the spot. You bring energy, curiosity, and clothes you don't mind sweating in. We'll teach you the basics, the first rhythms, and how to play in a group.",
+      description:
+        "Your first class is free. Bring your drum or rent on the spot. You bring energy, curiosity, and clothes you don't mind sweating in. We'll teach you the basics, the first rhythms, and how to play in a group.",
     },
     {
       title: "Learn Dundun & Djembe",
-      description: "Unlike most schools that only teach Djembe, we also teach Dunduns, the bass drums, from day one. They are the heartbeat. Djembe is the fire on top. Together, they tell the full story of West African percussion.",
+      description:
+        "Unlike most schools that only teach Djembe, we also teach Dunduns, the bass drums, from day one. They are the heartbeat. Djembe is the fire on top. Together, they tell the full story of West African percussion.",
     },
     {
       title: "Sweat, Smile & Repeat",
-      description: "This is basically sports. You'll work hard, get calluses, and go home with your hands buzzing. But you'll also feel energised, grounded, and part of something bigger than yourself.",
+      description:
+        "This is basically sports. You'll work hard, get calluses, and go home with your hands buzzing. But you'll also feel energised, grounded, and part of something bigger than yourself.",
     },
   ],
   cta: {
@@ -78,24 +84,28 @@ export const howItWorksConfig = {
 
 export const featuresConfig = {
   title: "Why Bush Taxi Is Different",
-  description: "Most schools teach Djembe and call it a day. We also teach Dunduns. Because in West Africa, these instruments are almost never played separate.",
+  description:
+    "Most schools teach Djembe and call it a day. We also teach Dunduns. Because in West Africa, these instruments are almost never played separate.",
   features: [
     {
       number: "01",
       title: "Learn Dundun & Djembe",
-      description: "Dundun provides the deep bass heartbeat. Djembe adds the melody and fire. Culturally and traditionally, they cannot live without each other — and neither should your learning. We teach both from your very first class.",
+      description:
+        "Dundun provides the deep bass heartbeat. Djembe adds the melody and fire. Culturally and traditionally, they cannot live without each other — and neither should your learning. We teach both from your very first class.",
       image: "/img/about2.jpg",
     },
     {
       number: "02",
       title: "Rooted in West African Tradition",
-      description: "This music is played daily for baptisms, weddings, funerals, harvest festivals, and coming-of-age ceremonies. It's not a hobby — it's a living culture. We respect the tradition while making it accessible to everyone.",
+      description:
+        "This music is played daily for baptisms, weddings, funerals, harvest festivals, and coming-of-age ceremonies. It's not a hobby — it's a living culture. We respect the tradition while making it accessible to everyone.",
       image: "/img/about6.jpg",
     },
     {
       number: "03",
       title: "Sweat, Drum & Feel Alive",
-      description: "Drumming is probably the only instrument you can hit as hard as you want and you won't break it. It's physical. It's cathartic. It's a full-body workout that leaves you energised, grounded, and grinning.",
+      description:
+        "Drumming is probably the only instrument you can hit as hard as you want and you won't break it. It's physical. It's cathartic. It's a full-body workout that leaves you energised, grounded, and grinning.",
       image: "/img/about14.webp",
     },
   ],
@@ -103,12 +113,30 @@ export const featuresConfig = {
 
 export const statsConfig = {
   title: "Numbers That Matter",
-  description: "Two decades of drumming. Thousands of hours of practice. A passion that keeps growing.",
+  description:
+    "Two decades of drumming. Thousands of hours of practice. A passion that keeps growing.",
   stats: [
-    { number: "2002", label: "Playing Since", description: "Over 20 years of deep immersion in West African percussion" },
-    { number: "1000s", label: "Hours Played", description: "At the peak, practicing 6 to 8 hours every week" },
-    { number: "4", label: "Countries Taught In", description: "Australia, Germany, Portugal and Brazil — plus studying in West Africa" },
-    { number: "∞", label: "Joy Delivered", description: "The only instrument you can hit as hard as you want" },
+    {
+      number: "2002",
+      label: "Playing Since",
+      description: "Over 20 years of deep immersion in West African percussion",
+    },
+    {
+      number: "1000s",
+      label: "Hours Played",
+      description: "At the peak, practicing 6 to 8 hours every week",
+    },
+    {
+      number: "4",
+      label: "Countries Taught In",
+      description:
+        "Australia, Germany, Portugal and Brazil — plus studying in West Africa",
+    },
+    {
+      number: "∞",
+      label: "Joy Delivered",
+      description: "The only instrument you can hit as hard as you want",
+    },
   ],
 } as const;
 
@@ -116,17 +144,20 @@ export const testimonialsConfig = {
   title: "What Drummers Are Saying",
   testimonials: [
     {
-      quote: "I came for a workout and found a community. Andre makes every class feel like a celebration, not a lesson.",
+      quote:
+        "I came for a workout and found a community. Andre makes every class feel like a celebration, not a lesson.",
       name: "Sarah M.",
       role: "Student, 6 months",
     },
     {
-      quote: "Learning both Dundun and Djembe together changed everything. I finally understand how the rhythm actually works.",
+      quote:
+        "Learning both Dundun and Djembe together changed everything. I finally understand how the rhythm actually works.",
       name: "Marcus T.",
       role: "Student, 1 year",
     },
     {
-      quote: "I've never sweat so much and smiled so hard. This is the most fun you can have while basically doing sports.",
+      quote:
+        "I've never sweat so much and smiled so hard. This is the most fun you can have while basically doing sports.",
       name: "Jen K.",
       role: "Student, 3 months",
     },
@@ -134,33 +165,56 @@ export const testimonialsConfig = {
 } as const;
 
 export const pricingConfig = {
-  title: "Choose Your Rhythm",
-  description: "Start with a free class. Then pick the plan that fits your groove.",
+  title: "Choose Your Rhythm. Bring Your Drum",
+  description:
+    "Start with a free 90-minute class. Then pick the plan that fits your groove.",
   tiers: [
     {
       name: "Single Class",
-      price: "$25",
+      price: "$30",
       period: "per class",
-      description: "Drop in when you can. Perfect for busy schedules or trying it out after your free class.",
-      features: ["All instruments provided", "Learn Dundun & Djembe", "All skill levels welcome", "No commitment"],
+      description:
+        "Drop in when you can. Perfect for busy schedules or trying it out after your free class.",
+      features: [
+        "Duns available, Djembe on request",
+        "Learn Dundun & Djembe",
+        "All skill levels welcome",
+        "No commitment",
+      ],
       cta: { text: "Book a Class", href: "mailto:mail@andresilva.online" },
     },
     {
       name: "10-Class Pass",
-      price: "$220",
+      price: "$250",
       period: "per pass",
       badge: "Best Value",
-      description: "Save $30 and commit to your rhythm. Valid for 3 months. This is where the real progress happens.",
-      features: ["All instruments provided", "Learn Dundun & Djembe", "All skill levels welcome", "Valid for 3 months", "Priority booking for weekend intensives"],
+      description:
+        "Save $50 and commit to your rhythm. Valid for 3 months. This is where the real progress happens.",
+      features: [
+        "Duns available, Djembe on request",
+        "Learn Dundun & Djembe",
+        "All skill levels welcome",
+        "Valid for 3 months",
+        "Priority booking for weekend intensives",
+      ],
       cta: { text: "Get Your Pass", href: "mailto:mail@andresilva.online" },
     },
     {
       name: "Weekend Intensive",
-      price: "$160",
+      price: "$150",
       period: "per workshop",
-      description: "6 hours of immersive drumming. Go deep into a specific rhythm, technique, or tradition. For those who want to accelerate.",
-      features: ["6-hour immersive session", "Deep dive into specific rhythms", "All instruments provided", "Small group, personal attention", "Meals & refreshments included"],
-      cta: { text: "Join the Intensive", href: "mailto:mail@andresilva.online" },
+      description:
+        "2x 3 hours of immersive drumming. Go deep into a specific rhythm, technique, or tradition. For those who want to accelerate.",
+      features: [
+        "6-hour immersive session",
+        "Deep dive into specific rhythms",
+        "Duns available, Djembe on request",
+        "Small group, personal attention",
+      ],
+      cta: {
+        text: "Join the Intensive",
+        href: "mailto:mail@andresilva.online",
+      },
     },
   ],
   note: "All prices in AUD. First class is always free. No equipment needed — we provide the drums. Cash or bank transfer accepted.",
@@ -171,35 +225,43 @@ export const faqConfig = {
   faqs: [
     {
       question: "Do I need any musical experience?",
-      answer: "Not at all. Most of our students start from zero. If you can tap your foot, you can learn. Andre breaks everything down step by step, and the group energy carries everyone forward.",
+      answer:
+        "Not at all. Most of our students start from zero. If you can tap your foot, you can learn. Andre breaks everything down step by step, and the group energy carries everyone forward.",
     },
     {
       question: "Do I need to bring my own drum?",
-      answer: "No — we provide all instruments. Dunduns and Djembes are available in class. Just bring yourself, water, and clothes you don't mind sweating in.",
+      answer:
+        "No — we provide all instruments. Dunduns and Djembes are available in class. Just bring yourself, water, and clothes you don't mind sweating in.",
     },
     {
       question: "Why do you teach both Dundun and Djembe?",
-      answer: "Because in West Africa, they never exist without each other. Dundun is the deep heartbeat — the foundation. Djembe is the melody and fire on top. Learning both gives you the full picture of the rhythm, not just half the story.",
+      answer:
+        "Because in West Africa, they never exist without each other. Dundun is the deep heartbeat — the foundation. Djembe is the melody and fire on top. Learning both gives you the full picture of the rhythm, not just half the story.",
     },
     {
       question: "Where and when are the classes?",
-      answer: "Palmwoods (Rhythm Culture): Tuesdays, 5:30 PM — advertised on their site. Pomona (Bush Taxi): Thursdays, 5:30 PM to 7:00 PM — coming soon (not yet confirmed).",
+      answer:
+        "Palmwoods (Rhythm Culture): Tuesdays, 5:30 PM — advertised on their site. Pomona (Bush Taxi): Thursdays, 5:30 PM to 7:00 PM — coming soon (not yet confirmed).",
     },
     {
       question: "What should I wear?",
-      answer: "Comfortable clothes you can move and sweat in. This is basically sports. You'll be sitting, standing, and moving around the drums. Leave your rings and watches at home.",
+      answer:
+        "Comfortable clothes you can move and sweat in. This is basically sports. You'll be sitting, standing, and moving around the drums. Leave your rings and watches at home.",
     },
     {
       question: "Can I really hit the drum as hard as I want?",
-      answer: "Yes! That's the beauty of it. Drumming is probably the only instrument you can hit as hard as you can and you won't break it. It's designed for release, energy, and joy.",
+      answer:
+        "Yes! That's the beauty of it. Drumming is probably the only instrument you can hit as hard as you can and you won't break it. It's designed for release, energy, and joy.",
     },
     {
       question: "Are weekend intensives for beginners?",
-      answer: "Weekend intensives welcome all levels, but they're designed for people who want to go deeper. If you've done a few regular classes first, you'll get more out of it. Beginners are absolutely welcome though — Andre adapts to the group.",
+      answer:
+        "Weekend intensives welcome all levels, but they're designed for people who want to go deeper. If you've done a few regular classes first, you'll get more out of it. Beginners are absolutely welcome though — Andre adapts to the group.",
     },
     {
       question: "How do I pay?",
-      answer: "Cash or bank transfer on the day. No complicated booking systems. Just show up, drum, and pay.",
+      answer:
+        "Cash or bank transfer on the day. No complicated booking systems. Just show up, drum, and pay.",
     },
   ],
   contact: {
@@ -213,7 +275,8 @@ export const faqConfig = {
 
 export const finalCtaConfig = {
   headline: "Ready to Feel the Rhythm?",
-  description: "Your first class is free. The drums are waiting. The only thing missing is you. Come and groove, sweat a little, and go home with your hands buzzing and your heart full.",
+  description:
+    "Your first class is free. The drums are waiting. The only thing missing is you. Come and groove, sweat a little, and go home with your hands buzzing and your heart full.",
   cta: {
     text: "Book Your Free Class",
     href: "mailto:mail@andresilva.online",
@@ -223,7 +286,8 @@ export const finalCtaConfig = {
 
 export const aboutConfig = {
   title: "The Bush Taxi Story",
-  subtitle: "Over 20 years of obsession, travel, study, and joy. It started with a single drum and a lot of curiosity.",
+  subtitle:
+    "Over 20 years of obsession, travel, study, and joy. It started with a single drum and a lot of curiosity.",
   sections: [
     {
       title: "2002 — The Spark",
@@ -257,19 +321,42 @@ export const aboutConfig = {
     },
   ],
   philosophy: {
-    quote: "It's a long way. It's a hard instrument to learn. It's not 'bunkaraba, bunkaraba, cantipa.' It's not a bongo. It is a Jembe. It carries the weight of its culture. And if you get into it — really into it — it's just really fun.",
+    quote:
+      "It's a long way. It's a hard instrument to learn. It's not 'bunkaraba, bunkaraba, cantipa.' It's not a bongo. It is a Jembe. It carries the weight of its culture. And if you get into it — really into it — it's just really fun.",
     pillars: [
-      { title: "Physical", description: "You'll sweat. This is basically sports." },
-      { title: "Joyful", description: "Laughter and good energy are non-negotiable." },
-      { title: "Respectful", description: "We honor the tradition while making it accessible." },
-      { title: "Inclusive", description: "All levels, all backgrounds, all welcome." },
-      { title: "Both Instruments", description: "Dundun and Djembe, always together." },
+      {
+        title: "Physical",
+        description: "You'll sweat. This is basically sports.",
+        image: "/img/physical.webp",
+      },
+      {
+        title: "Joyful",
+        description: "Laughter and good energy are non-negotiable.",
+        image: "/img/about6.webp",
+      },
+      {
+        title: "Respectful",
+        description: "We honor the tradition while making it accessible.",
+        image: "/img/respectful.webp",
+      },
+      {
+        title: "Inclusive",
+        description: "All levels, all backgrounds, all welcome.",
+        image: "/img/about12.webp",
+      },
+      {
+        title: "Both Instruments",
+        description: "Dundun and Djembe, always together.",
+        image: "/img/about4.webp",
+      },
     ],
   },
-  closingQuote: "I am hoping that with Bush Taxi here in the Noosa Hinterland, we can welcome people into this culture and into this world of Jembe and Dunduns and Malinke West African culture. So yes — come on, let's have some fun. Enrol now.",
+  closingQuote:
+    "I am hoping that with Bush Taxi here in the Noosa Hinterland, we can welcome people into this culture and into this world of Jembe and Dunduns and Malinke West African culture. So yes — come on, let's have some fun. Enrol now.",
   contact: {
     headline: "Join the Rhythm",
-    description: "Your first class is free. Come find out why Andre has dedicated over 20 years to this music.",
+    description:
+      "Your first class is free. Come find out why Andre has dedicated over 20 years to this music.",
     cta: {
       text: "Book Your Free Class",
       href: "mailto:mail@andresilva.online",
@@ -278,7 +365,8 @@ export const aboutConfig = {
 } as const;
 
 export const footerConfig = {
-  description: "Bush Taxi Drumming School — Learn Dundun & Djembe in the Noosa Hinterland. Weekly classes, weekend intensives, and a whole lot of rhythm.",
+  description:
+    "Bush Taxi Drumming School — Learn Dundun & Djembe in the Noosa Hinterland. Weekly classes, weekend intensives, and a whole lot of rhythm.",
   cta: {
     text: "Join the Mailing List",
     href: "https://sendfox.com/lp/3oxljv",
@@ -300,13 +388,9 @@ export const footerConfig = {
     location: "Noosa Hinterland, QLD",
     email: "mail@andresilva.online",
     palmwoods: "Tuesdays, 5:30 PM (Rhythm Culture)",
-    palmwoodsUrl: "https://rhythmculture.com.au/",
     pomona: "Thursdays, 5:30–7:00 PM (Coming Soon)",
   },
-  copyright: {
-    text: `© ${new Date().getFullYear()} Bush Taxi Drumming School. Website crafted by Hinterland Web.`,
-    hinterlandWebUrl: "https://hinterlandweb.com",
-  },
+  copyright: `© ${new Date().getFullYear()} Bush Taxi Drumming School. Website crafted by Hinterland Web`,
 } as const;
 
 /**
